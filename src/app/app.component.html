@@ -317,6 +317,20 @@
 
 <div class="content" role="main">
 
+
+<div class="task-area" innerHTML="{{ currentTask.text | highlight : pattern}}"></div>
+<div class="content" role="main">
+  <input [(ngModel)]="pattern" #ctrl="ngModel">
+  
+    <div class="card">
+      <div class="card-body" innerHTML="{{ currentTask.text | highlight : pattern}}">
+      
+      </div>
+    </div>
+  </div>
+
+  <!-- Highlight Card -->
+ <button (click)="nextTask()">Next</button>
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
 

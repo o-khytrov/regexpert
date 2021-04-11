@@ -1,0 +1,10 @@
+[
+    {
+        "text": "some text here",
+        "expected":"some"
+    },
+    {
+        "text": "This also replaces the found substring with the searched one, applying the wrong c",
+        "expected":"some"
+    }
+]
