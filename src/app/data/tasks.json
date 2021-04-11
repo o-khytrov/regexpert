@@ -1,12 +1,25 @@
 [
     {
+        "title":"Matching specific characters",
+        "explanation": "Find words fan man can",
+        "text": "fan man tan jan can",
+        "expected":"fan\nman\ncan",
+        "hint":"For finding any character defin them inside square brackets. For example, the pattern [abc] will only match a single a, b, or c letter and nothing else.",
+        "answer":"[fmc](an)"
+    },
+    {
+        "title":"Excluding specific characters",
+        "explanation": "Find words hog dog",
+        "text": "hog dog bog",
+        "expected":"hog\ndog",
+        "hint":"",
+        "answer":"[^b](og)"
+    },
+    {
         "explanation": "Extract all phone numbers from the message using regular expression",
         "text": "There are some phone numbers 816-333-1234. Also you can call me at 645.555.1234 and of course I'm always reachable at (542)867-5309",
         "expected":"816-333-1234\n645.555.1234\n(542)867-5309",
-        "hint":"\\(?\\d{3}[-.)](\\d{3})[-.]\\d{4}"
-    },
-    {
-        "text": "This also replaces the found substring with the searched one, applying the wrong c",
-        "expected":"some"
+        "hint":"",
+        "answer":"\\(?\\d{3}[-.)](\\d{3})[-.]\\d{4}"
     }
 ]

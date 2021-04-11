@@ -238,3 +238,7 @@ svg#clouds {
   min-height: 300px;
   ;
 }
+.badge
+{
+    cursor: pointer;
+}

@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HighlightPipe } from './pipes/highlight.pipe';
+import { FinishComponent } from './finish/finish.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HighlightPipe
+    HighlightPipe,
+    FinishComponent
   ],
   imports: [
     BrowserModule,
