@@ -15,10 +15,41 @@
 </div>
 
 <div class="content" role="main">
-  <div>{{currentTask.explanation}}</div>
-  <input [(ngModel)]="pattern" #ctrl="ngModel" (ngModelChange)="onChange($event)">
-  <div innerHTML="{{ currentTask.text | highlight : pattern}}"></div>
-  <div *ngFor="let item of result;">{{item}}</div>
-  <button class="btn" (click)="nextTask()" [disabled]="!currentTask.done">Next</button>
+
+  <div class="task">
+    <div class="card">
+      <div class="card-header">Task</div>
+      <div class="card-body">{{currentTask.explanation}}</div>
+    </div>
+    <form class="form-gruop mt-2">
+      <input id="regex" name="regex" class="form-control" [(ngModel)]="pattern" #ctrl="ngModel"
+        (ngModelChange)="onChange($event)" placeholder="Enter regular expression">
+    </form>
+    <div class="card mt-3 mb-3">
+
+      <div class="card-body" innerHTML="{{ currentTask.text | highlight : pattern}}"></div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-6">
+        <div class="card">
+          <div class="card-header">Expected result</div>
+          <div class="card-body results">{{currentTask.expected}}</div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card">
+          <div class="card-header">Actual result</div>
+          <div class="card-body results">{{result}} </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <button class="btn btn-success mt-3" (click)="nextTask()" [disabled]="!currentTask.done">Next</button>
 </div>
 <router-outlet></router-outlet>

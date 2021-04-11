@@ -14,7 +14,7 @@ export class AppComponent {
   pattern: string;
   str: string;
   currentTaskIndex = 0;
-  result: string[];
+  result: string;
 
 
   constructor() {
@@ -23,12 +23,15 @@ export class AppComponent {
   nextTask() {
     this.currentTaskIndex++;
     this.currentTask = this.tasks[this.currentTaskIndex];
+    this.result = "";
+    this.pattern="";
   }
   onChange(event) {
 
     var re = new RegExp(this.pattern, 'gi');
-    this.result = this.currentTask.text.match(re);
-    if (this.result && this.result.join("\n") == this.currentTask.expected) {
+    var res = this.currentTask.text.match(re);
+    this.result=res.join("\n");
+    if (this.result && this.result == this.currentTask.expected) {
       this.currentTask.done = true;
 
     }
