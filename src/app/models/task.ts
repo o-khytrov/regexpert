@@ -5,5 +5,5 @@ export class Task {
     expected: string;
     answer: string;
     done: boolean;
-
+    hint:string;
 }

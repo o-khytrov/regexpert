@@ -1,0 +1,19 @@
+::ng-deep mark {
+    padding: unset !important;
+    background-color: yellow;
+  }
+
+  .results {
+    white-space: pre-wrap; 
+  }
+  .working-area
+  {
+    white-space: pre-wrap;
+    background-color: lightblue;
+  }
+  .error
+  {
+    border-color: rgb(183 13 13/ 39%);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(160 10 10 / 39%);
+  }
