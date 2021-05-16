@@ -1,4 +1,6 @@
-Welcome to Regexpert. Here you can practice regular expressions.
+
  <div class="container" role="main"> 
- <button  [routerLink]="['/exercise']" class="btn btn-primary">Go</button>
+    Welcome {{courseStarted ? 'back':'' }} to Regexpert.
+
+ <button [routerLink]="['/exercise']" class="btn btn-primary mt-5">{{courseStarted ? 'Continue course':'Start course' }}</button>
  </div>

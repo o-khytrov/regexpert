@@ -1,11 +1,11 @@
 [
     {
         "title": "Matching digits",
-        "explanation": "Write a pattern that matches all the digit in the given text",
+        "explanation": "Write a pattern that matches all digits in the given text",
         "text": "var a = 123;\nabx123xyz\ndefine \"123\"",
         "expected": "123\n123\n123",
-        "hint": "Charcter '/d' matches any digit, specify number of charters to take in curly braces '{}'",
-        "answer": "[fmc](an)"
+        "hint": "Character '/d' matches any digit, specify number of charters to take in curly braces '{}'",
+        "answer": "\\d{3}"
     },
     {
         "title": "The Dot",
@@ -16,7 +16,7 @@
         "answer": "...\\."
     },
     {
-        "title": "Charcter ranges",
+        "title": "Character ranges",
         "explanation": "Write a pattern to find firs three word starting with uppercase character",
         "text": "Ana\nBob\nCpc\naax\nbby\nccz",
         "expected": "Ana\nBob\nCpc",
@@ -24,16 +24,16 @@
         "answer": "[A-C](..)"
     },
     {
-        "title": "Repetion of characters",
+        "title": "Repetition of characters",
         "explanation": "Write a pattert to find expected results",
         "text": "wazzzzzzzzup\nwazzzzzzzup\nwazzzzzup\nwazzzzup\nwazzzup\nwazzup\nwazup",
         "expected": "wazzzzzup\nwazzzzup\nwazzzup\nwazzup",
-        "hint": "You can specify a range for character repetiion such tha a{1,3} no more than 3 times, but no less than once for example",
+        "hint": "You can specify a range for character repetition such tha a{1,3} no more than 3 times, but no less than once for example",
         "answer": "(wa)z{2,6}up"
     },
     {
         "title": "Optional character",
-        "explanation": "Write a pattert to find expected results",
+        "explanation": "Write a pattern to find expected results",
         "text": "1 error found\n2 errors found\n25 errors found\nNo errors found",
         "expected": "1 error found\n2 errors found\n25 errors found",
         "hint": "You can add '?' after the character to specify that it is optional. For example, the pattern ab?c will match either the strings \"abc\" or \"ac\" because the b is considered optional.",
@@ -44,7 +44,7 @@
         "explanation": "Find words fan man can",
         "text": "fan man tan jan can",
         "expected": "fan\nman\ncan",
-        "hint": "For finding any character defin them inside square brackets. For example, the pattern [abc] will only match a single a, b, or c letter and nothing else.",
+        "hint": "For finding any character define them inside square brackets. For example, the pattern [abc] will only match a single a, b, or c letter and nothing else.",
         "answer": "[fmc](an)"
     },
     {
@@ -52,8 +52,16 @@
         "explanation": "Find words hog dog",
         "text": "hog dog bog",
         "expected": "hog\ndog",
-        "hint": "",
+        "hint": "Use '^' to exclude specific characters in the pattern",
         "answer": "[^b](og)"
+    },
+    {
+        "title": "Extracting numeric ranges",
+        "explanation": "Extract time of all flights betewwn 8 AM and 9 PM",
+        "text": "LH 2545 6:40 Мюнхен Lufthansa D D9 Посадка\nPS 6317 6:40 Анталія Ukraine International Airlines D D7 Посадку закінчено\nPQ 501 6:55 Тірана Sky Up Airlines D D12 Посадка\nQR 296 8:20 Доха Qatar Airways Company D D8 Посадка\nET4245 9:15 Каір Ethiopian Airlines Corporation D D7 За розкладом\nPS 397 9:15 Каір Ukraine International Airlines D D7 За розкладом\nMS 9503 9:15 Каір Egypt Air D D7 За розкладом\nPS 9065 11:30 Львів UkraineInternational Airlines D D21 За розкладом\n7W 165 13:30 Львів Wind Rose D D21 За розкладом\nPS 9560 19:30 Стамбул Ukraine International Airlines D D3 За розкладом\nTK 460 20:30 Стамбул Turkish Airlines D D3 За розкладом\nFR 7183 22:45 Вроцлав Ryanair D D8 За розкладом\nFR 9234 23:35 Софія Ryanair D D8 За розкладом",
+        "expected": "8:20\n9:15\n9:15\n9:15\n11:30\n13:30\n19:30\n20:30",
+        "hint": "Character '/d' matches any digit, specify number of charters to take in curly braces '{}'",
+        "answer": "(2[0-1]|1[0-9]|[8-9]):\\d{2}"
     },
     {
         "title": "Final test",

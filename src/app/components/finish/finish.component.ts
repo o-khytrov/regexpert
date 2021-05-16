@@ -24,5 +24,10 @@ export class FinishComponent implements OnInit {
       }
     }
   }
+  restart()
+  {
+    localStorage.removeItem('level');
+    this.router.navigate(['/']);
+  }
 
 }

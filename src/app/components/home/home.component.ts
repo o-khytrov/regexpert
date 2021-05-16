@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
-
+  courseStarted:boolean;
   ngOnInit(): void {
+    this.courseStarted = localStorage.getItem('level')!=null;
   }
 
 }

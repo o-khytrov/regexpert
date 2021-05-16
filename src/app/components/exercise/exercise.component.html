@@ -24,10 +24,10 @@
           </div>
         </div>
       </div>
-      <form class="form-gruop mt-2">
+      <form class="form-group mt-2">
         <input id="regex" name="regex" class="form-control" [class.error] = "invalidRegex" [(ngModel)]="pattern" #ctrl="ngModel"
           (ngModelChange)="onChange($event)" placeholder="Enter regular expression">
-      
+
       </form>
       <div *ngIf="invalidRegex" class="form-control alert-danger">Invalid pattern</div>
       <div class="card mt-3 mb-3">
